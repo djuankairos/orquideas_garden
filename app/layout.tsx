@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Script from "next/script";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import type { ReactNode } from "react";
@@ -146,3 +146,4 @@ export default function RootLayout({
     </html>
   );
 }
+

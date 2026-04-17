@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import type { CollectionData } from "@/lib/catalog";
 
@@ -27,3 +27,4 @@ export function CollectionCard({ collection }: CollectionCardProps) {
     </article>
   );
 }
+

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import {
   CONTACT_ADDRESS,
@@ -58,3 +58,4 @@ export default function PrivacyPage() {
     </main>
   );
 }
+

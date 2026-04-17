@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { collections, products } from "@/lib/catalog";
 import { absoluteUrl } from "@/lib/site";
 
@@ -9,7 +9,7 @@ const LEGAL_DATE = new Date("2025-01-01");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    // Homepage — máxima prioridad
+    // Homepage â€” máxima prioridad
     {
       url: absoluteUrl("/"),
       lastModified: CATALOG_DATE,
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
-    // Páginas legales — prioridad baja, cambian poco
+    // Páginas legales â€” prioridad baja, cambian poco
     {
       url: absoluteUrl("/terminos-y-condiciones"),
       lastModified: LEGAL_DATE,
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
-    // Colecciones — alta prioridad comercial
+    // Colecciones â€” alta prioridad comercial
     ...collections.map((collection) => ({
       url: absoluteUrl(`/colecciones/${collection.slug}`),
       lastModified: CATALOG_DATE,
@@ -70,3 +70,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 }
+

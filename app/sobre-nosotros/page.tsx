@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { absoluteUrl, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -41,3 +41,4 @@ export default function AboutPage() {
     </main>
   );
 }
+

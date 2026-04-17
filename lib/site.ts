@@ -1,4 +1,4 @@
-export const SITE_NAME = "Orquideas Garden";
+﻿export const SITE_NAME = "Orquideas Garden";
 export const SITE_DESCRIPTION =
   "Floral Boutique en Bogotá: orquideas premium para regalo, condolencias y ocasiones especiales.";
 export const SITE_URL =
@@ -11,3 +11,4 @@ export const WHATSAPP_URL = "https://wa.me/573208721695";
 export function absoluteUrl(path: string): string {
   return new URL(path, SITE_URL).toString();
 }
+

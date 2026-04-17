@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { CONTACT_ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, SITE_NAME } from "@/lib/site";
 
@@ -96,3 +96,4 @@ export function SiteFooter() {
     </footer>
   );
 }
+

@@ -1,4 +1,4 @@
-export type CollectionSlug = "cromadas" | "regalo" | "condolencias";
+﻿export type CollectionSlug = "cromadas" | "regalo" | "condolencias";
 
 export type ProductData = {
   slug: string;
@@ -260,3 +260,4 @@ export function getProductBySlug(slug: string): ProductData | undefined {
 export function getProductsByCollection(slug: CollectionSlug): ProductData[] {
   return products.filter((product) => product.coleccion === slug);
 }
+

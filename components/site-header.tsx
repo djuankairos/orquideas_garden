@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/site";
 
@@ -60,4 +60,5 @@ export function SiteHeader() {
     </header>
   );
 }
+
 

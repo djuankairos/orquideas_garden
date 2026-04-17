@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CotizacionForm } from "@/components/cotizacion-form";
 import { absoluteUrl } from "@/lib/site";
 
@@ -27,3 +27,4 @@ export default function CotizacionPage() {
     </main>
   );
 }
+

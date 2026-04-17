@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CollectionCard } from "@/components/collection-card";
 import { collections } from "@/lib/catalog";
 import { absoluteUrl } from "@/lib/site";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/colecciones"),
   },
   openGraph: {
-    title: "Colecciones — Orquídeas Garden",
+    title: "Colecciones â€” Orquídeas Garden",
     description: "Cromadas, Regalo y Condolencias. Arreglos premium con entrega a domicilio.",
     images: [
       {
@@ -44,3 +44,4 @@ export default function CollectionsPage() {
     </main>
   );
 }
+
