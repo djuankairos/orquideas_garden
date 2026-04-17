@@ -74,21 +74,47 @@ export default function RootLayout({
     slogan: "Floral Boutique · Bogotá",
     url: SITE_URL,
     logo: absoluteUrl("/brand/logo-garden-morado.png"),
+    image: [
+      absoluteUrl("/brand/logo-garden-morado.png"),
+      absoluteUrl("/hero/accordion/mg-0567.jpg"),
+      absoluteUrl("/hero/accordion/mg-0577.jpg"),
+    ],
     email: CONTACT_EMAIL,
+    telephone: CONTACT_PHONE,
+    priceRange: "$$",
+    areaServed: {
+      "@type": "City",
+      name: "Bogotá",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Calle 97#70c-95",
       addressLocality: "Bogotá",
       addressRegion: "Bogotá",
       addressCountry: "CO",
+      postalCode: "110911",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
         telephone: CONTACT_PHONE,
         contactType: "sales",
         areaServed: "CO",
+        availableLanguage: "Spanish",
       },
+    ],
+    sameAs: [
+      "https://www.instagram.com/orquideasgarden/",
+      "https://www.tiktok.com/@orquideasgarden",
+      "https://www.facebook.com/orquideasgardenbog",
     ],
   };
 

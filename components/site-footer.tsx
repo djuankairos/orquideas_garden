@@ -66,7 +66,7 @@ export function SiteFooter() {
               <Link href="/colecciones">Colecciones</Link>
             </li>
             <li>
-              <Link href="/cotizacion">Cotizacion</Link>
+              <Link href="/cotizacion">Cotización</Link>
             </li>
             <li>
               <Link href="/sobre-nosotros">Sobre Nosotros</Link>

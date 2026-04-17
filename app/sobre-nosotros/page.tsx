@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: absoluteUrl("/sobre-nosotros"),
   },
+  openGraph: {
+    title: "Sobre Nosotros | Orquideas Garden",
+    description:
+      "Conoce la esencia de Orquideas Garden, Floral Boutique especializada en arreglos premium en Bogotá.",
+    url: absoluteUrl("/sobre-nosotros"),
+    type: "website",
+    locale: "es_CO",
+  },
 };
 
 export default function AboutPage() {

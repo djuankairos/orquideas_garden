@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: absoluteUrl("/contacto"),
   },
+  openGraph: {
+    title: "Contacto | Orquideas Garden",
+    description:
+      "Contáctanos para soporte comercial, asesoría de ocasión y seguimiento de entregas.",
+    url: absoluteUrl("/contacto"),
+    type: "website",
+    locale: "es_CO",
+  },
 };
 
 export default function ContactPage() {

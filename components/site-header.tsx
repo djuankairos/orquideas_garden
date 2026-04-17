@@ -5,7 +5,7 @@ import { WHATSAPP_URL } from "@/lib/site";
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/colecciones", label: "Colecciones" },
-  { href: "/cotizacion", label: "Cotizacion" },
+  { href: "/cotizacion", label: "Cotización" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -28,7 +28,7 @@ export function SiteHeader() {
               <span className="truncate font-display text-base tracking-wide text-ivory sm:text-lg">
                 Orquideas <span className="text-champagne">Garden</span>
               </span>
-              <span className="brand-subtitle hidden sm:inline">Floral Boutique · Bogota</span>
+              <span className="brand-subtitle hidden sm:inline">Floral Boutique · Bogotá</span>
             </span>
           </Link>
 
@@ -42,7 +42,7 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <nav className="mt-3 overflow-x-auto pb-1" aria-label="Navegacion principal">
+        <nav className="mt-3 overflow-x-auto pb-1" aria-label="Navegación principal">
           <ul className="flex min-w-max items-center gap-4 text-sm text-pearl sm:justify-end sm:gap-5">
             {navItems.map((item) => (
               <li key={item.href}>

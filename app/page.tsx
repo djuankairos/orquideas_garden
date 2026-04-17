@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site";
 
 const heroImages = [
   { src: "/hero/accordion/mg-0567.jpg", alt: "Arreglos de regalo - Orquideas Garden" },
-  { src: "/hero/accordion/mg-0568.jpg", alt: "Diseno premium - Orquideas Garden" },
+  { src: "/hero/accordion/mg-0568.jpg", alt: "Diseño premium - Orquideas Garden" },
   { src: "/hero/accordion/mg-0577.jpg", alt: "Momentos especiales - Orquideas Garden" },
   { src: "/hero/accordion/mg-0765.jpg", alt: "Condolencias - Orquideas Garden" },
   { src: "/hero/accordion/mg-0777.jpg", alt: "Floral Boutique - Orquideas Garden" },
@@ -15,19 +15,22 @@ const heroImages = [
 
 const heroTitle = (
   <>
-    Orquideas en Bogota para{" "}
-    <span className="text-[#A64E83]">regalar, celebrar</span> y acompanar.
+    Orquídeas en Bogotá para{" "}
+    <span className="text-[#A64E83]">regalar, celebrar</span> y acompañar.
   </>
 );
 
 export const metadata: Metadata = {
-  title: "Orquideas Premium | Tienda en Bogota",
+  title: { absolute: "Orquídeas Premium | Tienda en Bogotá | Orquideas Garden" },
+  alternates: {
+    canonical: SITE_URL,
+  },
   description:
-    "Arreglos de orquideas Phalaenopsis de lujo con envio a domicilio. Packaging sofisticado para regalo, celebracion y acompanamiento. Bogota y Colombia.",
+    "Arreglos de orquídeas Phalaenopsis de lujo con envío a domicilio. Packaging sofisticado para regalo, celebración y acompañamiento. Bogotá y Colombia.",
   openGraph: {
-    title: "Orquideas Premium - Floral Boutique en Bogota",
+    title: "Orquídeas Premium - Floral Boutique en Bogotá",
     description:
-      "Arreglos de orquideas de lujo con envio nacional. Especialistas en packaging sofisticado.",
+      "Arreglos de orquídeas de lujo con envío nacional. Especialistas en packaging sofisticado.",
     images: [
       {
         url: `${SITE_URL}/hero/accordion/mg-0577.jpg`,
@@ -50,7 +53,7 @@ export default function HomePage() {
     <main className="container-shell py-10 sm:py-14">
       <HeroSection
         title={heroTitle}
-        subtitle="Arreglos premium con identidad elegante y entrega a domicilio. Descubre la coleccion ideal para cada ocasion."
+        subtitle="Arreglos premium con identidad elegante y entrega a domicilio. Descubre la colección ideal para cada ocasión."
         images={heroImages}
         className="rounded-3xl border shadow-glow mb-10"
         style={{
@@ -63,8 +66,8 @@ export default function HomePage() {
       <section className="pt-16">
         <h2 className="section-title">Colecciones destacadas</h2>
         <p className="section-copy">
-          Explora estilos pensados para cada ocasion: brillo contemporaneo, regalos memorables y
-          arreglos sobrios para acompanar con sensibilidad.
+          Explora estilos pensados para cada ocasión: brillo contemporáneo, regalos memorables y
+          arreglos sobrios para acompañar con sensibilidad.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {collections.map((collection) => (
@@ -74,10 +77,10 @@ export default function HomePage() {
       </section>
 
       <section className="pb-10 pt-16">
-        <h2 className="section-title">Seleccion inicial del catalogo</h2>
+        <h2 className="section-title">Selección inicial del catálogo</h2>
         <p className="section-copy">
-          Aqui encuentras una muestra de nuestros arreglos mas solicitados para regalar, celebrar
-          y acompanar con elegancia.
+          Aquí encuentras una muestra de nuestros arreglos más solicitados para regalar, celebrar
+          y acompañar con elegancia.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featuredProducts.map((product) => (

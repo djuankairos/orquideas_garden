@@ -7,7 +7,7 @@ import {
   getProductsByCollection,
   type CollectionSlug,
 } from "@/lib/catalog";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type CollectionPageProps = {
   params: Promise<{
@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!collection) return {};
 
   return {
-    title: collection.seo_title,
+    title: { absolute: collection.seo_title },
     description: collection.seo_description,
     alternates: {
       canonical: absoluteUrl(`/colecciones/${collection.slug}`),
@@ -57,6 +57,31 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
 
   const collectionProducts = getProductsByCollection(slug as CollectionSlug);
 
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: SITE_NAME,
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Colecciones",
+        item: absoluteUrl("/colecciones"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: collection.nombre,
+        item: absoluteUrl(`/colecciones/${collection.slug}`),
+      },
+    ],
+  };
+
   return (
     <main className="container-shell py-12 sm:py-16">
       <section className="hero-shell">
@@ -75,6 +100,11 @@ export default async function CollectionDetailPage({ params }: CollectionPagePro
           ))}
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
     </main>
   );
 }

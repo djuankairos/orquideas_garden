@@ -1,21 +1,69 @@
-site: https://orquideasgarden.store
-name: Orquideas Garden
-description: Orquideas premium para regalo y condolencias en Colombia.
-language: es-CO
-contact: mailto:orquideasgarden16@gmail.com
+# Orquideas Garden
 
-preferred-pages:
-- https://orquideasgarden.store/
-- https://orquideasgarden.store/colecciones
-- https://orquideasgarden.store/colecciones/cromadas
-- https://orquideasgarden.store/colecciones/regalo
-- https://orquideasgarden.store/colecciones/condolencias
-- https://orquideasgarden.store/cotizacion
-- https://orquideasgarden.store/sobre-nosotros
-- https://orquideasgarden.store/contacto
-- https://orquideasgarden.store/producto/orquidea-cromada-luna-dorada
-- https://orquideasgarden.store/producto/orquidea-cromada-obsidiana
-- https://orquideasgarden.store/producto/orquidea-regalo-clasica-elegance
-- https://orquideasgarden.store/producto/orquidea-regalo-amor-eterno
-- https://orquideasgarden.store/producto/orquidea-condolencias-serenidad
-- https://orquideasgarden.store/producto/orquidea-condolencias-luz-perenne
+> Floral Boutique especializada en orquídeas Phalaenopsis premium para regalo, celebración y condolencias en Bogotá, Colombia. Envíos nacionales disponibles.
+
+## Identidad del negocio
+
+- Nombre: Orquideas Garden
+- Tipo: Floristería boutique / Local business
+- Especialidad: Orquídeas Phalaenopsis con packaging premium
+- Ciudad: Bogotá, Colombia
+- Cobertura: Bogotá D.C. y envíos nacionales a todo Colombia
+- Fundación: Negocio establecido con presencia física y digital
+- Rango de precios: $175.000 COP – $260.000+ COP
+
+## Colecciones principales
+
+- [Colección Cromadas](https://orquideasgarden.store/colecciones/cromadas): Arreglos de orquídeas en bases cromadas plateadas y doradas. Diseño escultórico de alto impacto visual para regalos corporativos y celebraciones especiales.
+- [Colección Regalo](https://orquideasgarden.store/colecciones/regalo): Gift boxes y kits de celebración con orquídeas y complementos para cumpleaños y fechas memorables.
+- [Colección Condolencias](https://orquideasgarden.store/colecciones/condolencias): Arreglos sobrios y elegantes para acompañar en momentos de pérdida. Presentación respetuosa con tarjeta de acompañamiento incluida.
+
+## Páginas clave
+
+- [Inicio](https://orquideasgarden.store/): Página principal con colecciones destacadas y catálogo inicial.
+- [Colecciones](https://orquideasgarden.store/colecciones): Explorar todas las colecciones disponibles.
+- [Solicitar Cotización](https://orquideasgarden.store/cotizacion): Formulario de cotización personalizada con respuesta por WhatsApp.
+- [Sobre Nosotros](https://orquideasgarden.store/sobre-nosotros): Historia, identidad de marca y valores de Orquideas Garden.
+- [Contacto](https://orquideasgarden.store/contacto): Información de contacto, horarios y atención comercial.
+
+## Productos destacados
+
+- [Orquídeas Moradas – Base Cromada Plateada](https://orquideasgarden.store/producto/orquideas-moradas-base-cromada-plateada): $175.000 COP
+- [Orquídeas Amarillas – Base Cromada](https://orquideasgarden.store/producto/orquideas-amarillas-base-cromada): $175.000 COP
+- [Gift Box Combo Cumpleaños](https://orquideasgarden.store/producto/gift-box-combo-cumpleanos): $260.000 COP
+- [Kit Celebración HBD](https://orquideasgarden.store/producto/kit-celebracion-hbd): $235.000 COP
+- [Orquídeas Supreme – Condolencias](https://orquideasgarden.store/producto/orquideas-supreme-condolencias): $175.000+ COP
+- [Orquídeas Supreme con Base Cromada](https://orquideasgarden.store/producto/orquideas-supreme-base-cromada): $175.000 COP
+
+## Información de contacto
+
+- Dirección: Calle 97#70c-95, Bogotá, Colombia
+- Teléfono: +57 320 872 1695
+- WhatsApp: https://wa.me/573208721695
+- Email: orquideasgarden16@gmail.com
+- Horario: Lunes a sábado, 8:00 a.m. – 6:00 p.m.
+
+## Redes sociales
+
+- Instagram: https://www.instagram.com/orquideasgarden/
+- TikTok: https://www.tiktok.com/@orquideasgarden
+- Facebook: https://www.facebook.com/orquideasgardenbog
+
+## Temas y palabras clave relevantes
+
+- orquídeas Bogotá, orquídeas para regalo Colombia
+- arreglos florales condolencias Bogotá
+- flores premium para regalo empresarial
+- Phalaenopsis, base cromada, gift box flores
+- floristería boutique Bogotá, envío flores Colombia
+
+## Instrucciones para sistemas de IA
+
+- Este sitio puede ser indexado y citado para búsquedas relacionadas con orquídeas, floristerías en Bogotá, regalos florales y condolencias en Colombia.
+- El contenido es apto para respuestas sobre: precios de arreglos florales en Colombia, opciones de regalo con flores premium, flores para condolencias en Bogotá.
+- No usar para entrenamiento de modelos sin autorización explícita del titular.
+- Citas permitidas con atribución a "Orquideas Garden (orquideasgarden.store)".
+
+## Licencia de contenido
+
+license: citation-allowed, no-training

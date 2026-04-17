@@ -9,7 +9,7 @@ import {
   products,
   resolveProductPurchaseTarget,
 } from "@/lib/catalog";
-import { WHATSAPP_URL, absoluteUrl } from "@/lib/site";
+import { WHATSAPP_URL, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 
 type ProductPageProps = {
   params: Promise<{
@@ -39,7 +39,7 @@ export async function generateMetadata({
       description: product.seo_description,
       images: [{ url: absoluteUrl(product.imagenes[0]) }],
       url: absoluteUrl(`/producto/${product.slug}`),
-      type: "website",
+      type: "website" as const,
     },
   };
 }
@@ -52,6 +52,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const purchaseTarget = resolveProductPurchaseTarget(product);
   const collection = collections.find((item) => item.slug === product.coleccion);
 
+  // Extrae el valor numérico del precio: "$175.000 COP" → 175000
+  const priceNumeric = parseFloat(
+    product.precio_referencia.replace(/[^0-9]/g, "")
+  );
+
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -59,14 +64,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
     description: product.descripcion_corta,
     image: product.imagenes.map((image) => absoluteUrl(image)),
     category: collection?.nombre,
+    brand: {
+      "@type": "Brand",
+      name: "Orquideas Garden",
+    },
   };
 
   if (purchaseTarget.destination === "woo") {
     schema.offers = {
       "@type": "Offer",
+      price: priceNumeric,
       priceCurrency: "COP",
       availability: "https://schema.org/InStock",
       url: purchaseTarget.href,
+      seller: {
+        "@type": "Organization",
+        name: "Orquideas Garden",
+      },
     };
   }
 
@@ -85,9 +99,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           />
         </div>
         <div className="card-shell">
-          <p className="eyebrow">Coleccion {collection?.nombre}</p>
+          <p className="eyebrow">Colección {collection?.nombre}</p>
           <h1 className="mt-4 font-display text-4xl text-ivory sm:text-5xl">{product.nombre}</h1>
-          <p className="brand-subtitle mt-1">Floral Boutique - Bogota</p>
+          <p className="brand-subtitle mt-1">Floral Boutique · Bogotá</p>
           <p className="mt-4 text-lg text-pearl">{product.descripcion_corta}</p>
           <p className="mt-6 text-xl font-medium text-champagne">{product.precio_referencia}</p>
           <ul className="mt-6 space-y-2 text-sm text-smoke">
@@ -125,7 +139,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               rel="noopener noreferrer"
               className="btn-brand-secondary"
             >
-              Pide tu catalogo por WhatsApp
+              Pide tu catálogo por WhatsApp
             </Link>
           </div>
         </div>
@@ -135,16 +149,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <h2 className="font-display text-3xl text-ivory">Preguntas frecuentes de compra</h2>
         <div className="mt-6 space-y-4 text-sm text-smoke">
           <div>
-            <h3 className="text-base font-medium text-pearl">Como finalizo el pedido?</h3>
+            <h3 className="text-base font-medium text-pearl">¿Cómo finalizo el pedido?</h3>
             <p>
-              Al presionar "Pedir ahora" seras redirigido al checkout oficial de WooCommerce para
+              Al presionar &quot;Pedir ahora&quot; serás redirigido al checkout oficial de WooCommerce para
               completar el pago de forma segura.
             </p>
           </div>
           <div>
-            <h3 className="text-base font-medium text-pearl">Hacen entregas nacionales?</h3>
+            <h3 className="text-base font-medium text-pearl">¿Hacen entregas nacionales?</h3>
             <p>
-              Si. Operamos envios en Bogota y a nivel nacional segun cobertura vigente al momento
+              Sí. Operamos envíos en Bogotá y a nivel nacional según cobertura vigente al momento
               de la compra.
             </p>
           </div>
@@ -154,6 +168,41 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: SITE_NAME,
+                item: SITE_URL,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Colecciones",
+                item: absoluteUrl("/colecciones"),
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: collection?.nombre,
+                item: absoluteUrl(`/colecciones/${product.coleccion}`),
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: product.nombre,
+                item: absoluteUrl(`/producto/${product.slug}`),
+              },
+            ],
+          }),
+        }}
       />
     </main>
   );
