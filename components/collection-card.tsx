@@ -11,19 +11,19 @@ export function CollectionCard({ collection }: CollectionCardProps) {
     <article className="card-shell flex h-full flex-col">
       <Image
         src={collection.cover_image}
-        alt={`Coleccion ${collection.nombre}`}
+        alt={`Colección ${collection.nombre}`}
         width={400}
-        height={192}
+        height={225}
         loading="lazy"
-        className="h-48 w-full rounded-2xl border border-gold/25 object-cover"
+        className="aspect-[4/3] w-full rounded-2xl border border-gold/25 object-cover"
+        style={{ objectPosition: collection.image_position ?? "50% 50%" }}
       />
-      <p className="eyebrow mt-5">Coleccion</p>
+      <p className="eyebrow mt-5">Colección</p>
       <h2 className="mt-2 font-display text-3xl text-ivory">{collection.nombre}</h2>
       <p className="mt-2 text-sm text-smoke">{collection.descripcion}</p>
       <Link href={`/colecciones/${collection.slug}`} className="btn-brand-secondary mt-auto w-fit pt-5">
-        Ver coleccion
+        Ver colección
       </Link>
     </article>
   );
 }
-

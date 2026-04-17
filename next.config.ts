@@ -56,6 +56,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.orquideasgarden.store" }],
+        destination: "https://orquideasgarden.store/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.orquideasgarden.online" }],
+        destination: "https://orquideasgarden.online/:path*",
+        permanent: true,
+      },
+      {
         source: "/tienda",
         destination: "/colecciones",
         permanent: true,

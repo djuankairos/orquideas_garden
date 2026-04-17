@@ -17,9 +17,10 @@ export function ProductCard({ product, pageType }: ProductCardProps) {
         src={product.imagenes[0]}
         alt={product.nombre}
         width={400}
-        height={208}
+        height={225}
         loading="lazy"
-        className="h-52 w-full rounded-2xl border border-gold/25 object-cover"
+        className="aspect-[4/3] w-full rounded-2xl border border-gold/25 object-cover"
+        style={{ objectPosition: product.image_position ?? "50% 50%" }}
       />
       <h3 className="mt-5 font-display text-2xl text-ivory">{product.nombre}</h3>
       <p className="mt-2 text-sm text-smoke">{product.descripcion_corta}</p>

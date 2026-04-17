@@ -6,6 +6,7 @@ export type ProductData = {
   coleccion: CollectionSlug;
   precio_referencia: string;
   imagenes: string[];
+  image_position?: string;
   descripcion_corta: string;
   beneficios: string[];
   woo_checkout_url: string;
@@ -21,6 +22,7 @@ export type CollectionData = {
   nombre: string;
   hero_text: string;
   descripcion: string;
+  image_position?: string;
   productos_destacados: string[];
   seo_title: string;
   seo_description: string;
@@ -55,13 +57,14 @@ export function resolveProductPurchaseTarget(
 export const products: ProductData[] = [
   {
     slug: "orquideas-moradas-base-cromada-plateada",
-    nombre: "Orquideas Moradas - Base Cromada Plateada",
+    nombre: "Orquídeas Moradas - Base Cromada Plateada",
     coleccion: "cromadas",
     precio_referencia: "$175.000 COP",
     imagenes: [
       "https://orquideasgarden.store/wp-content/uploads/2021/08/wp2.jpeg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 38%",
     descripcion_corta:
       "Arreglo de dos varas en base cromada plateada con presencia elegante y acabado moderno.",
     beneficios: [
@@ -70,20 +73,21 @@ export const products: ProductData[] = [
       "Empaque con detalle de ocasión",
     ],
     woo_checkout_url: wooProductUrlById(1407),
-    whatsapp_url: whatsappProductUrl("Orquideas Moradas - Base Cromada Plateada"),
+    whatsapp_url: whatsappProductUrl("Orquídeas Moradas - Base Cromada Plateada"),
     seo_title: "Orquideas Moradas Base Cromada Plateada | Orquideas Garden",
     seo_description:
-      "Orquideas moradas en base cromada plateada con estilo contemporaneo y entrega en Colombia.",
+      "Orquídeas moradas en base cromada plateada con estilo contemporáneo y entrega en Colombia.",
   },
   {
     slug: "orquideas-amarillas-base-cromada",
-    nombre: "Orquideas Amarillas - Base Cromada",
+    nombre: "Orquídeas Amarillas - Base Cromada",
     coleccion: "cromadas",
     precio_referencia: "$175.000 COP",
     imagenes: [
       "https://orquideasgarden.store/wp-content/uploads/2022/05/WhatsApp-Image-2023-03-10-at-4.17.43-PM-1.jpeg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 34%",
     descripcion_corta:
       "Composición luminosa en tonos amarillos con base cromada para momentos especiales.",
     beneficios: [
@@ -92,20 +96,21 @@ export const products: ProductData[] = [
       "Ideal para celebraciones y regalos",
     ],
     woo_checkout_url: wooProductUrlById(1693),
-    whatsapp_url: whatsappProductUrl("Orquideas Amarillas - Base Cromada"),
+    whatsapp_url: whatsappProductUrl("Orquídeas Amarillas - Base Cromada"),
     seo_title: "Orquideas Amarillas Base Cromada | Orquideas Garden",
     seo_description:
       "Orquídeas amarillas con base cromada y empaque premium para regalo y celebración.",
   },
   {
     slug: "gift-box-combo-cumpleanos",
-    nombre: "Gift Box Combo Cumpleanos",
+    nombre: "Gift Box Combo Cumpleaños",
     coleccion: "regalo",
     precio_referencia: "$260.000 COP",
     imagenes: [
       "https://orquideasgarden.store/wp-content/uploads/2021/01/IMG_6568.jpg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 36%",
     descripcion_corta:
       "Caja especial de cumpleaños con orquídea y complementos para celebrar con estilo.",
     beneficios: [
@@ -128,6 +133,7 @@ export const products: ProductData[] = [
       "https://orquideasgarden.store/wp-content/uploads/2023/04/WhatsApp-Image-2023-03-13-at-8.29.38-AM.jpeg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 40%",
     descripcion_corta:
       "Kit de celebración con orquídea y detalles festivos para fechas memorables.",
     beneficios: [
@@ -143,13 +149,14 @@ export const products: ProductData[] = [
   },
   {
     slug: "orquideas-supreme-condolencias",
-    nombre: "Orquideas Supreme - Condolencias",
+    nombre: "Orquídeas Supreme - Condolencias",
     coleccion: "condolencias",
     precio_referencia: "$175.000+ COP",
     imagenes: [
       "https://orquideasgarden.store/wp-content/uploads/2021/01/Photoroom_20260214_120627.jpg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 32%",
     descripcion_corta:
       "Arreglo de condolencias de línea supreme para acompañar con respeto y calidez.",
     beneficios: [
@@ -158,20 +165,21 @@ export const products: ProductData[] = [
       "Entrega confiable en Bogotá y nacional",
     ],
     woo_checkout_url: wooProductUrlById(404),
-    whatsapp_url: whatsappProductUrl("Orquideas Supreme - Condolencias"),
+    whatsapp_url: whatsappProductUrl("Orquídeas Supreme - Condolencias"),
     seo_title: "Orquideas Supreme Condolencias | Orquideas Garden",
     seo_description:
-      "Arreglo de condolencias con orquideas premium y presentacion respetuosa.",
+      "Arreglo de condolencias con orquídeas premium y presentación respetuosa.",
   },
   {
     slug: "orquideas-supreme-base-cromada",
-    nombre: "Orquideas Supreme con Base Cromada",
+    nombre: "Orquídeas Supreme con Base Cromada",
     coleccion: "condolencias",
     precio_referencia: "$175.000 COP",
     imagenes: [
       "https://orquideasgarden.store/wp-content/uploads/2021/04/IMG_7947.jpg",
       FALLBACK_IMAGE,
     ],
+    image_position: "50% 35%",
     descripcion_corta:
       "Composición elegante en base cromada para expresar apoyo con presencia y tacto.",
     beneficios: [
@@ -180,10 +188,10 @@ export const products: ProductData[] = [
       "Ideal para homenajes y acompañamiento",
     ],
     woo_checkout_url: wooProductUrlById(1149),
-    whatsapp_url: whatsappProductUrl("Orquideas Supreme con Base Cromada"),
+    whatsapp_url: whatsappProductUrl("Orquídeas Supreme con Base Cromada"),
     seo_title: "Orquideas Supreme con Base Cromada | Orquideas Garden",
     seo_description:
-      "Orquideas de condolencias en base cromada con entrega y presentacion premium.",
+      "Orquídeas de condolencias en base cromada con entrega y presentación premium.",
   },
 ];
 
@@ -201,6 +209,7 @@ export const collections: CollectionData[] = [
     seo_title: "Colección Cromadas | Orquideas Garden",
     seo_description:
       "Colección cromada con orquídeas premium de estilo contemporáneo para regalo y celebración.",
+    image_position: "50% 18%",
     cover_image:
       "https://orquideasgarden.store/wp-content/uploads/2021/08/wp2.jpeg",
   },
@@ -209,7 +218,7 @@ export const collections: CollectionData[] = [
     nombre: "Regalo",
     hero_text: "Opciones pensadas para celebrar y sorprender.",
     descripcion:
-      "Selecciones de regalo con orquideas y complementos para cumpleanos y fechas especiales.",
+      "Selecciones de regalo con orquídeas y complementos para cumpleaños y fechas especiales.",
     productos_destacados: [
       "gift-box-combo-cumpleanos",
       "kit-celebracion-hbd",
@@ -217,6 +226,7 @@ export const collections: CollectionData[] = [
     seo_title: "Colección Regalo | Orquideas Garden",
     seo_description:
       "Orquídeas para regalo con presentación premium y detalles para celebraciones especiales.",
+    image_position: "50% 20%",
     cover_image:
       "https://orquideasgarden.store/wp-content/uploads/2021/01/IMG_6568.jpg",
   },
@@ -233,6 +243,7 @@ export const collections: CollectionData[] = [
     seo_title: "Colección Condolencias | Orquideas Garden",
     seo_description:
       "Arreglos de condolencias con orquídeas premium y entrega confiable en Colombia.",
+    image_position: "50% 16%",
     cover_image:
       "https://orquideasgarden.store/wp-content/uploads/2021/01/Photoroom_20260214_120627.jpg",
   },
