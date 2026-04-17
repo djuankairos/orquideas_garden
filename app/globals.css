@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --lav-50: #f0eaf8;
+  --lav-100: #d4c4f0;
+  --lav-200: #b8a0d4;
+  --lav-400: #9880c4;
+  --lav-600: #7a6ab4;
+  --lav-800: #5a4a94;
+  --lav-950: #2a1a44;
+
+  --mauve-50: #fdf0f4;
+  --mauve-100: #f0c8d8;
+  --mauve-200: #e0a8c0;
+  --mauve-400: #c478a0;
+  --mauve-600: #9a4a6a;
+  --mauve-800: #7a2a4a;
+  --mauve-950: #2a1a24;
+
+  --cream: #faf7f5;
+  --line: #e8dce4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply bg-espresso font-sans text-pearl antialiased;
+  background-image:
+    radial-gradient(ellipse 58% 42% at 10% 18%, rgba(184, 160, 212, 0.28), transparent 64%),
+    radial-gradient(ellipse 45% 56% at 94% 8%, rgba(224, 168, 192, 0.22), transparent 64%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.hero-shell {
+  @apply rounded-3xl border p-8 shadow-glow sm:p-12;
+  border-color: rgba(184, 160, 212, 0.44);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(212, 196, 240, 0.42), transparent 35%),
+    radial-gradient(circle at 88% 24%, rgba(240, 200, 216, 0.34), transparent 34%),
+    linear-gradient(160deg, #fdf0f4 0%, #faf7f5 100%);
+}
+
+.card-shell {
+  @apply rounded-3xl border bg-white/95 p-6 shadow-soft;
+  border-color: rgba(232, 220, 228, 0.95);
+}
+
+.section-title {
+  @apply font-display text-4xl font-medium sm:text-5xl;
+  color: var(--mauve-950);
+  letter-spacing: 0.01em;
+}
+
+.section-copy {
+  @apply mt-4 max-w-3xl text-sm leading-relaxed text-smoke sm:text-base;
+}
+
+.eyebrow {
+  color: var(--mauve-600);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  color: var(--lav-400);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.btn-brand-primary {
+  background: linear-gradient(90deg, var(--lav-600), var(--mauve-600));
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 0.78rem 1.35rem;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-brand-primary:hover {
+  box-shadow: 0 12px 24px rgba(122, 74, 148, 0.2);
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.btn-brand-secondary {
+  background: #fff;
+  border: 1px solid rgba(122, 106, 180, 0.45);
+  border-radius: 9999px;
+  color: var(--lav-800);
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 0.78rem 1.35rem;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-brand-secondary:hover {
+  border-color: var(--mauve-400);
+  color: var(--mauve-800);
+  transform: translateY(-1px);
+}
+
+.btn-mini {
+  border-radius: 9999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 0.55rem 0.95rem;
+  text-transform: uppercase;
+}

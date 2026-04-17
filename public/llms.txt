@@ -1,0 +1,21 @@
+site: https://orquideasgarden.store
+name: Orquideas Garden
+description: Orquideas premium para regalo y condolencias en Colombia.
+language: es-CO
+contact: mailto:orquideasgarden16@gmail.com
+
+preferred-pages:
+- https://orquideasgarden.store/
+- https://orquideasgarden.store/colecciones
+- https://orquideasgarden.store/colecciones/cromadas
+- https://orquideasgarden.store/colecciones/regalo
+- https://orquideasgarden.store/colecciones/condolencias
+- https://orquideasgarden.store/cotizacion
+- https://orquideasgarden.store/sobre-nosotros
+- https://orquideasgarden.store/contacto
+- https://orquideasgarden.store/producto/orquidea-cromada-luna-dorada
+- https://orquideasgarden.store/producto/orquidea-cromada-obsidiana
+- https://orquideasgarden.store/producto/orquidea-regalo-clasica-elegance
+- https://orquideasgarden.store/producto/orquidea-regalo-amor-eterno
+- https://orquideasgarden.store/producto/orquidea-condolencias-serenidad
+- https://orquideasgarden.store/producto/orquidea-condolencias-luz-perenne

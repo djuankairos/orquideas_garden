@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0F1012"/>
+  <circle cx="980" cy="120" r="250" fill="#B8962E" fill-opacity="0.15"/>
+  <circle cx="200" cy="680" r="280" fill="#D4AF5A" fill-opacity="0.12"/>
+  <path d="M600 200C520 280 560 420 640 480C720 420 760 280 680 200C656 176 624 176 600 200Z" fill="#D4AF5A" fill-opacity="0.5"/>
+  <path d="M470 360C410 420 430 520 500 560C570 520 590 420 530 360C512 344 488 344 470 360Z" fill="#B8962E" fill-opacity="0.4"/>
+  <path d="M730 360C670 420 690 520 760 560C830 520 850 420 790 360C772 344 748 344 730 360Z" fill="#B8962E" fill-opacity="0.4"/>
+  <rect x="588" y="480" width="24" height="180" rx="12" fill="#2B3A2C"/>
+  <rect x="560" y="650" width="80" height="20" rx="10" fill="#2B3A2C"/>
+  <text x="80" y="110" fill="#F5F0E8" font-family="serif" font-size="64">Orquideas Garden</text>
+  <text x="80" y="160" fill="#A39C90" font-family="sans-serif" font-size="26">Colección premium · placeholder visual</text>
+</svg>

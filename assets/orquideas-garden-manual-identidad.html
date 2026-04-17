@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orquideas Garden · Mini Manual de Identidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lav-50: #f0eaf8;
+    --lav-100: #d4c4f0;
+    --lav-200: #b8a0d4;
+    --lav-400: #9880c4;
+    --lav-600: #7a6ab4;
+    --lav-800: #5a4a94;
+    --lav-950: #2a1a44;
+
+    --mauve-50: #fdf0f4;
+    --mauve-100: #f0c8d8;
+    --mauve-200: #e0a8c0;
+    --mauve-400: #c478a0;
+    --mauve-600: #9a4a6a;
+    --mauve-800: #7a2a4a;
+    --mauve-950: #2a1a24;
+
+    --nude: #fdf0f4;
+    --cream: #faf7f5;
+    --text: #2a1a24;
+    --muted: #9a7a8a;
+    --line: #e8dce4;
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PAGE STRUCTURE ── */
+  .cover {
+    background: var(--nude);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 10% 20%, rgba(184,160,212,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 90% 80%, rgba(224,168,192,0.12) 0%, transparent 60%);
+  }
+
+  .cover-inner { position: relative; z-index: 1; }
+
+  .brand-tag {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--mauve-400);
+    margin-bottom: 2.5rem;
+  }
+
+  .cover-logo { margin-bottom: 2rem; }
+
+  .cover-logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .og-letter {
+    font-family: var(--serif);
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--lav-600);
+    letter-spacing: -.02em;
+  }
+
+  .og-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--lav-600);
+    margin-top: 8px;
+  }
+
+  .og-sub {
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--mauve-400);
+    margin-top: 4px;
+  }
+
+  .cover-title {
+    font-family: var(--serif);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3rem;
+  }
+
+  .cover-year {
+    font-size: 10px;
+    letter-spacing: .15em;
+    color: var(--lav-200);
+    margin-top: 6px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    border-bottom: .5px solid var(--line);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .sec-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .sec-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--lav-100);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .sec-title-group { display: flex; flex-direction: column; gap: 2px; }
+
+  .sec-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--mauve-400);
+  }
+
+  .sec-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.1;
+  }
+
+  /* ── LOGO GRID ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .logo-grid { grid-template-columns: 1fr; }
+  }
+
+  .logo-card {
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: .5px solid var(--line);
+    transition: transform .3s ease;
+  }
+
+  .logo-card:hover { transform: translateY(-3px); }
+
+  .logo-card-nude { background: var(--nude); }
+  .logo-card-white { background: #fff; }
+  .logo-card-dark-lav { background: var(--lav-950); border-color: rgba(255,255,255,.08); }
+  .logo-card-dark-mauve { background: var(--mauve-950); border-color: rgba(255,255,255,.08); }
+  .logo-card-lavender { background: var(--lav-50); }
+  .logo-card-rose { background: #fce8f2; border-color: #e8c0d4; }
+
+  .logo-mark-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .og-letter-sm {
+    font-family: var(--serif);
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .og-name-sm {
+    font-family: var(--serif);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .og-sub-sm {
+    font-size: 8px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .card-tag {
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  /* ── PALETTE ── */
+  .palette-section { margin-bottom: 2rem; }
+
+  .palette-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: .5px solid var(--line);
+  }
+
+  .pal-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .pal-row { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .pal-chip {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    border: .5px solid var(--line);
+  }
+
+  .pal-swatch { height: 56px; }
+
+  .pal-info {
+    padding: 7px 8px;
+    background: #fff;
+  }
+
+  .pal-name { font-size: 9px; font-weight: 500; color: var(--text); line-height: 1.3; }
+  .pal-hex { font-size: 8px; color: var(--muted); font-family: monospace; margin-top: 1px; }
+  .pal-role { font-size: 8px; color: var(--lav-200); margin-top: 1px; }
+
+  /* ── TYPOGRAPHY ── */
+  .type-specimen {
+    border: .5px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .type-row {
+    padding: 20px 28px;
+    border-bottom: .5px solid var(--line);
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mauve-400);
+    margin-bottom: 6px;
+  }
+
+  .t-display {
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--mauve-800);
+    line-height: 1.05;
+    font-style: italic;
+  }
+
+  .t-h1 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--lav-800);
+    line-height: 1.2;
+  }
+
+  .t-h2 {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mauve-600);
+    letter-spacing: .04em;
+  }
+
+  .t-body {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 520px;
+  }
+
+  .t-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mauve-600);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .t-caption {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--lav-200);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  /* ── VOICE ── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .voice-grid { grid-template-columns: 1fr; }
+  }
+
+  .voice-card {
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+
+  .v-do { background: #fce8f0; border: .5px solid #e8b8cc; }
+  .v-dont { background: #f5f0f5; border: .5px solid #e0d4e0; }
+
+  .v-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+
+  .v-do .v-tag { color: var(--mauve-800); }
+  .v-dont .v-tag { color: var(--lav-400); }
+
+  .v-text { font-size: 13px; line-height: 1.5; }
+  .v-do .v-text { color: var(--mauve-950); }
+  .v-dont .v-text { color: #7a5a7a; }
+
+  /* ── COPIES ── */
+  .copy-card {
+    border: .5px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    background: #fff;
+    transition: border-color .2s ease;
+  }
+
+  .copy-card:hover { border-color: var(--lav-200); }
+
+  .copy-platform {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mauve-400);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .copy-platform::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mauve-400);
+    flex-shrink: 0;
+  }
+
+  .copy-text { font-size: 14px; color: var(--text); line-height: 1.7; }
+
+  .copy-cta {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--lav-600);
+  }
+
+  /* ── KEYWORDS ── */
+  .kw-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .kw {
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .04em;
+    border: .5px solid;
+    transition: background .2s;
+  }
+
+  .kw-lav {
+    background: var(--lav-50);
+    color: var(--lav-800);
+    border-color: var(--lav-100);
+  }
+
+  .kw-mauve {
+    background: var(--mauve-50);
+    color: var(--mauve-800);
+    border-color: var(--mauve-100);
+  }
+
+  .kw:hover { opacity: .75; }
+
+  /* ── CTA BLOCKS ── */
+  .cta-block {
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border: .5px solid;
+  }
+
+  .cta-lav { background: var(--lav-50); border-color: var(--lav-100); }
+  .cta-mauve { background: var(--mauve-50); border-color: var(--mauve-100); }
+
+  .cta-txt { font-size: 15px; font-weight: 400; }
+  .cta-lav .cta-txt { color: var(--lav-800); }
+  .cta-mauve .cta-txt { color: var(--mauve-800); }
+
+  .cta-sub { font-size: 11px; margin-top: 2px; }
+  .cta-lav .cta-sub { color: var(--lav-400); }
+  .cta-mauve .cta-sub { color: var(--mauve-400); }
+
+  .cta-btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity .2s;
+  }
+
+  .cta-btn:hover { opacity: .85; }
+  .cta-btn-lav { background: var(--lav-600); }
+  .cta-btn-mauve { background: var(--mauve-600); }
+
+  /* ── COLOR USE RULES ── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+
+  .rule-card {
+    border-radius: 14px;
+    border: .5px solid var(--line);
+    padding: 18px 20px;
+    background: #fff;
+  }
+
+  .rule-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--mauve-600);
+    margin-bottom: 8px;
+  }
+
+  .rule-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .swatch-inline {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--lav-950);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--lav-100);
+  }
+
+  .footer-sub {
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--lav-400);
+    margin-top: 4px;
+  }
+
+  .footer-line {
+    width: 40px;
+    height: .5px;
+    background: var(--lav-800);
+    margin: 1.5rem auto;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: var(--lav-800);
+    letter-spacing: .06em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cover-inner > * {
+    animation: fadeUp .8s ease both;
+  }
+
+  .cover-inner > *:nth-child(1) { animation-delay: .1s; }
+  .cover-inner > *:nth-child(2) { animation-delay: .3s; }
+  .cover-inner > *:nth-child(3) { animation-delay: .5s; }
+  .cover-inner > *:nth-child(4) { animation-delay: .7s; }
+  .cover-inner > *:nth-child(5) { animation-delay: .9s; }
+
+  /* ── DIVIDER ── */
+  .gradient-strip {
+    height: 2px;
+    background: linear-gradient(90deg, var(--lav-50), var(--lav-200), var(--mauve-200), var(--mauve-400), var(--mauve-200), var(--lav-200), var(--lav-50));
+    border: none;
+    margin: 0;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .cover { min-height: auto; padding: 3rem 2rem; }
+    .logo-card:hover { transform: none; }
+    .copy-card:hover { border-color: var(--line); }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-inner">
+    <p class="brand-tag">Mini Manual de Identidad de Marca · 2025</p>
+
+    <div class="cover-logo">
+      <div class="cover-logo-mark">
+        <span class="og-letter">O</span>
+        <svg width="72" height="120" viewBox="0 0 72 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 -6px; flex-shrink:0;">
+          <path d="M36 10 C36 10 36 28 36 45 C36 70 36 85 36 110" stroke="#d4a0b8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <!-- flor superior -->
+          <ellipse cx="36" cy="26" rx="9" ry="16" fill="none" stroke="#c4a8e0" stroke-width="1.1" transform="rotate(-20 36 26)"/>
+          <ellipse cx="36" cy="26" rx="9" ry="16" fill="none" stroke="#e0a8c0" stroke-width="1.1" transform="rotate(20 36 26)"/>
+          <ellipse cx="36" cy="26" rx="7" ry="11" fill="none" stroke="#c4a8e0" stroke-width=".9"/>
+          <ellipse cx="36" cy="26" rx="4" ry="6" fill="none" stroke="#b8a0d4" stroke-width=".8"/>
+          <path d="M31 26 Q36 31 41 26" stroke="#9880c4" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <circle cx="36" cy="10" r="3.5" fill="none" stroke="#c4a8e0" stroke-width="1"/>
+          <!-- flor inferior -->
+          <ellipse cx="36" cy="70" rx="11" ry="18" fill="none" stroke="#e0a8c0" stroke-width="1.1" transform="rotate(-22 36 70)"/>
+          <ellipse cx="36" cy="70" rx="11" ry="18" fill="none" stroke="#c4a8e0" stroke-width="1.1" transform="rotate(22 36 70)"/>
+          <ellipse cx="36" cy="70" rx="8" ry="13" fill="none" stroke="#e0a8c0" stroke-width=".9"/>
+          <ellipse cx="36" cy="70" rx="5" ry="7" fill="none" stroke="#b8a0d4" stroke-width=".8"/>
+          <path d="M30 70 Q36 76 42 70" stroke="#9880c4" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="og-letter">G</span>
+      </div>
+      <p class="og-name">Orquideas Garden</p>
+      <p class="og-sub">Floral Boutique · Bogotá, Colombia ®</p>
+    </div>
+
+    <p class="cover-title">Manual de Identidad Visual</p>
+    <p class="cover-year">Versión 2025 · Uso interno y agencia</p>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 01 · LOGO -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Identidad</span>
+      <span class="sec-title">Logo y versiones</span>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);max-width:560px;margin-bottom:2rem;line-height:1.75;">
+    El logo está compuesto por las iniciales <em>O·G</em> en tipografía serif de trazo fino, flanqueando una ilustración botánica de orquídeas en line art. Existen dos rutas de color: <strong style="color:var(--lav-600)">Lavanda premium</strong> y <strong style="color:var(--mauve-600)">Mauve rosado</strong>.
+  </p>
+
+  <!-- Versión Lavanda -->
+  <p style="font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--lav-600);margin-bottom:10px;">Ruta lavanda</p>
+  <div class="logo-grid" style="margin-bottom:1.5rem;">
+
+    <div class="logo-card logo-card-nude">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--lav-600);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#b8a0d4" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#c4a8e0" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#b89ed4" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#c4a8e0" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#9880c4" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#c4a8e0" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#b89ed4" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#c4a8e0" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#9880c4" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#c4a8e0" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--lav-600);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--lav-600);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--lav-200);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--lav-200);">Fondo nude</span>
+    </div>
+
+    <div class="logo-card logo-card-white">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--lav-600);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#b8a0d4" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#c4a8e0" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#b89ed4" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#c4a8e0" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#9880c4" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#c4a8e0" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#b89ed4" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#c4a8e0" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#9880c4" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#c4a8e0" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--lav-600);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--lav-600);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--lav-200);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--lav-200);">Fondo blanco</span>
+    </div>
+
+    <div class="logo-card logo-card-dark-lav">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:#d4c4f0;">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#9880c4" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#b8a0d4" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#c4b0e0" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#b8a0d4" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#d4c4f0" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#b8a0d4" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#c4b0e0" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#b8a0d4" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#d4c4f0" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#b8a0d4" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:#d4c4f0;">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:#d4c4f0;">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:#7a6ab4;">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:#5a4a94;">Fondo oscuro</span>
+    </div>
+
+    <div class="logo-card logo-card-lavender">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--lav-800);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#a090d0" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#b0a0dc" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#a090d0" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#b0a0dc" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#7a6ab4" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#b0a0dc" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#a090d0" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#b0a0dc" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#7a6ab4" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#b0a0dc" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--lav-800);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--lav-800);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--lav-400);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--lav-400);">Fondo lavanda</span>
+    </div>
+  </div>
+
+  <!-- Versión Mauve -->
+  <p style="font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve-600);margin-bottom:10px;">Ruta mauve rosado</p>
+  <div class="logo-grid">
+
+    <div class="logo-card logo-card-nude">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--mauve-600);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#d4a0b8" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#e0b4c8" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#d4a0b8" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#e0b4c8" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#b87090" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#e0b4c8" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#d4a0b8" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#e0b4c8" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#b87090" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#e0b4c8" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--mauve-600);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--mauve-600);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--mauve-200);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--mauve-200);">Fondo nude</span>
+    </div>
+
+    <div class="logo-card logo-card-white">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--mauve-600);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#d4a0b8" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#e0b4c8" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#d4a0b8" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#e0b4c8" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#b87090" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#e0b4c8" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#d4a0b8" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#e0b4c8" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#b87090" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#e0b4c8" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--mauve-600);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--mauve-600);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--mauve-200);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--mauve-200);">Fondo blanco</span>
+    </div>
+
+    <div class="logo-card logo-card-dark-mauve">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:#f0c8d8;">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#c08090" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#d4a0b0" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#e0b0c0" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#d4a0b0" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#f0c8d8" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#d4a0b0" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#e0b0c0" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#d4a0b0" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#f0c8d8" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#d4a0b0" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:#f0c8d8;">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:#f0c8d8;">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:#c08090;">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:#c08090;">Fondo oscuro</span>
+    </div>
+
+    <div class="logo-card logo-card-rose">
+      <div class="logo-mark-sm">
+        <span class="og-letter-sm" style="color:var(--mauve-800);">O</span>
+        <svg width="38" height="66" viewBox="0 0 52 90" fill="none" style="margin:0 -3px;flex-shrink:0;">
+          <path d="M26 8 C26 18 26 40 26 80" stroke="#c490a8" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#d4a8bc" stroke-width="1" transform="rotate(-18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="7" ry="12" fill="none" stroke="#c490a8" stroke-width="1" transform="rotate(18 26 20)"/>
+          <ellipse cx="26" cy="20" rx="5" ry="8" fill="none" stroke="#d4a8bc" stroke-width=".9"/>
+          <path d="M22 20 Q26 24 30 20" stroke="#9a4a6a" stroke-width=".9" fill="none"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#d4a8bc" stroke-width="1" transform="rotate(-20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="8" ry="13" fill="none" stroke="#c490a8" stroke-width="1" transform="rotate(20 26 52)"/>
+          <ellipse cx="26" cy="52" rx="6" ry="9" fill="none" stroke="#d4a8bc" stroke-width=".9"/>
+          <path d="M21 52 Q26 57 31 52" stroke="#9a4a6a" stroke-width=".9" fill="none"/>
+          <circle cx="26" cy="8" r="3" fill="none" stroke="#d4a8bc" stroke-width="1"/>
+        </svg>
+        <span class="og-letter-sm" style="color:var(--mauve-800);">G</span>
+      </div>
+      <div style="text-align:center;">
+        <p class="og-name-sm" style="color:var(--mauve-800);">Orquideas Garden</p>
+        <p class="og-sub-sm" style="color:var(--mauve-400);">Floral Boutique · Bogotá ®</p>
+      </div>
+      <span class="card-tag" style="color:var(--mauve-400);">Fondo rosado</span>
+    </div>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 02 · PALETA -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Sistema de color</span>
+      <span class="sec-title">Paleta de colores</span>
+    </div>
+  </div>
+
+  <div class="palette-section">
+    <p class="palette-label" style="color:var(--lav-600);">Ruta lavanda · Principal</p>
+    <div class="pal-row">
+      <div class="pal-chip"><div class="pal-swatch" style="background:#f0eaf8;"></div><div class="pal-info"><p class="pal-name">Lavanda niebla</p><p class="pal-hex">#f0eaf8</p><p class="pal-role">Fondo</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#d4c4f0;"></div><div class="pal-info"><p class="pal-name">Lavanda suave</p><p class="pal-hex">#d4c4f0</p><p class="pal-role">Superficie</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#b8a0d4;"></div><div class="pal-info"><p class="pal-name">Lavanda media</p><p class="pal-hex">#b8a0d4</p><p class="pal-role">Ilustración</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#9880c4;"></div><div class="pal-info"><p class="pal-name">Lavanda fuerte</p><p class="pal-hex">#9880c4</p><p class="pal-role">Acento</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#7a6ab4;"></div><div class="pal-info"><p class="pal-name">Uva premium</p><p class="pal-hex">#7a6ab4</p><p class="pal-role">Principal</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#5a4a94;"></div><div class="pal-info"><p class="pal-name">Mora profunda</p><p class="pal-hex">#5a4a94</p><p class="pal-role">Texto</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#2a1a44;"></div><div class="pal-info"><p class="pal-name">Noche violeta</p><p class="pal-hex">#2a1a44</p><p class="pal-role">Fondo osc.</p></div></div>
+    </div>
+  </div>
+
+  <div class="palette-section">
+    <p class="palette-label" style="color:var(--mauve-600);">Ruta mauve · Comunicaciones</p>
+    <div class="pal-row">
+      <div class="pal-chip"><div class="pal-swatch" style="background:#fdf0f4;"></div><div class="pal-info"><p class="pal-name">Rosa nude</p><p class="pal-hex">#fdf0f4</p><p class="pal-role">Fondo</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#f0c8d8;"></div><div class="pal-info"><p class="pal-name">Pétalo claro</p><p class="pal-hex">#f0c8d8</p><p class="pal-role">Superficie</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#e0a8c0;"></div><div class="pal-info"><p class="pal-name">Rosa palo</p><p class="pal-hex">#e0a8c0</p><p class="pal-role">Ilustración</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#c478a0;"></div><div class="pal-info"><p class="pal-name">Mauve medio</p><p class="pal-hex">#c478a0</p><p class="pal-role">Acento</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#9a4a6a;"></div><div class="pal-info"><p class="pal-name">Rosa intenso</p><p class="pal-hex">#9a4a6a</p><p class="pal-role">Principal</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#7a2a4a;"></div><div class="pal-info"><p class="pal-name">Ciruela suave</p><p class="pal-hex">#7a2a4a</p><p class="pal-role">Texto</p></div></div>
+      <div class="pal-chip"><div class="pal-swatch" style="background:#2a1a24;"></div><div class="pal-info"><p class="pal-name">Noche rosada</p><p class="pal-hex">#2a1a24</p><p class="pal-role">Fondo osc.</p></div></div>
+    </div>
+  </div>
+
+  <div class="rules-grid" style="margin-top:1.5rem;">
+    <div class="rule-card">
+      <p class="rule-title">Fondo principal</p>
+      <p class="rule-text"><span class="swatch-inline" style="background:#fdf0f4;border:.5px solid #e8d0dc;"></span>Rosa nude <code style="font-size:11px;color:var(--muted);">#fdf0f4</code> — uso en web, redes y piezas digitales. Nunca fondo negro.</p>
+    </div>
+    <div class="rule-card">
+      <p class="rule-title">Texto sobre fondo claro</p>
+      <p class="rule-text"><span class="swatch-inline" style="background:#7a2a4a;"></span>Ciruela suave o <span class="swatch-inline" style="background:#5a4a94;"></span>mora profunda. Nunca negro puro (#000).</p>
+    </div>
+    <div class="rule-card">
+      <p class="rule-title">Combinación recomendada</p>
+      <p class="rule-text">Logo en <strong style="color:var(--lav-600)">lavanda</strong> sobre fondo nude o blanco · Copy en <strong style="color:var(--mauve-600)">mauve</strong> para piezas de comunicación.</p>
+    </div>
+    <div class="rule-card">
+      <p class="rule-title">Lo que NO usar</p>
+      <p class="rule-text">Fondo negro · Verde bosque · Colores saturados o neones · Gradientes brillantes sobre el logo.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 03 · TIPOGRAFÍA -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">03</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Identidad tipográfica</span>
+      <span class="sec-title">Tipografía</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.75;">
+    Dos familias complementarias: <strong style="color:var(--mauve-600)">Cormorant Garamond</strong> (serif elegante) para display y títulos, <strong style="color:var(--lav-600)">Jost</strong> (sans geométrica refinada) para cuerpo y UI.
+  </p>
+  <div class="type-specimen">
+    <div class="type-row" style="background:var(--nude);">
+      <p class="type-meta">Display · Cormorant Garamond Italic 300 · Hero</p>
+      <p class="t-display">Naturaleza que enamora</p>
+    </div>
+    <div class="type-row">
+      <p class="type-meta">H1 · Cormorant Garamond 400 · Títulos principales</p>
+      <p class="t-h1">Especialistas en Orquídeas</p>
+    </div>
+    <div class="type-row">
+      <p class="type-meta">H2 · Jost 400 · Subtítulos de sección</p>
+      <p class="t-h2">Variedad y belleza en cada arreglo</p>
+    </div>
+    <div class="type-row">
+      <p class="type-meta">Cuerpo · Jost 300 · Párrafos y descripciones</p>
+      <p class="t-body">Somos especialistas en orquídeas en Bogotá. Variedad, frescura y belleza en cada arreglo, con entrega a domicilio y asesoría personalizada por WhatsApp. Cultivamos y elegimos cada planta con cuidado para que llegue perfecta a tus manos.</p>
+    </div>
+    <div class="type-row" style="background:var(--nude);">
+      <p class="type-meta">CTA · Jost 500 · Llamados a la acción</p>
+      <p class="t-cta">Pedir por WhatsApp · Ver catálogo →</p>
+    </div>
+    <div class="type-row">
+      <p class="type-meta">Caption · Jost 400 · Etiquetas y metadatos</p>
+      <p class="t-caption">Floral Boutique · Bogotá, Colombia · 2025 ®</p>
+    </div>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 04 · VOZ -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">04</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Comunicación</span>
+      <span class="sec-title">Voz de marca</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.75;">
+    La marca habla con elegancia, calidez y cercanía. Nunca agresiva en precio ni en urgencia. El tono es el de una boutique que sabe lo que tiene.
+  </p>
+  <div class="voice-grid">
+    <div class="voice-card v-do"><div class="v-tag">Usamos</div><p class="v-text">"Variedad y belleza en cada arreglo"</p></div>
+    <div class="voice-card v-dont"><div class="v-tag">Evitamos</div><p class="v-text">Lenguaje técnico o corporativo frío</p></div>
+    <div class="voice-card v-do"><div class="v-tag">Usamos</div><p class="v-text">"El regalo más especial para quien amas"</p></div>
+    <div class="voice-card v-dont"><div class="v-tag">Evitamos</div><p class="v-text">"Oferta limitada · Compra ya · Últimas unidades"</p></div>
+    <div class="voice-card v-do"><div class="v-tag">Usamos</div><p class="v-text">"Haz tu pedido · Pide catálogo"</p></div>
+    <div class="voice-card v-dont"><div class="v-tag">Evitamos</div><p class="v-text">Compararnos con la competencia directamente</p></div>
+    <div class="voice-card v-do"><div class="v-tag">Usamos</div><p class="v-text">"Somos especialistas en orquídeas 🌸"</p></div>
+    <div class="voice-card v-dont"><div class="v-tag">Evitamos</div><p class="v-text">Exceso de emojis o lenguaje informal</p></div>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 05 · COPIES -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">05</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Pauta digital</span>
+      <span class="sec-title">Copies para anuncios</span>
+    </div>
+  </div>
+
+  <div class="copy-card">
+    <p class="copy-platform">Meta Ads · Instagram &amp; Facebook · Tráfico / Conversión</p>
+    <p class="copy-text">¿Buscas el regalo más especial en Bogotá? 🌸<br>En Orquídeas Garden somos especialistas con variedad y belleza en cada arreglo. Envíos a domicilio, asesoría personalizada y los diseños más bonitos de la ciudad.</p>
+    <span class="copy-cta">Pide tu catálogo por WhatsApp →</span>
+  </div>
+
+  <div class="copy-card">
+    <p class="copy-platform">Google Ads · Búsqueda</p>
+    <p class="copy-text">
+      <strong style="color:var(--mauve-600);">Titular 1:</strong> Orquídeas en Bogotá · Floral Boutique<br>
+      <strong style="color:var(--mauve-600);">Titular 2:</strong> Especialistas · Envío a domicilio<br>
+      <strong style="color:var(--mauve-600);">Descripción:</strong> Arreglos únicos con entrega en Bogotá. Pide tu catálogo por WhatsApp y sorprende con el regalo perfecto.
+    </p>
+  </div>
+
+  <div class="copy-card">
+    <p class="copy-platform">TikTok Ads · Awareness / Engagement</p>
+    <p class="copy-text">La orquídea más bonita de Bogotá para la persona más especial 🌸✨<br>Somos Orquídeas Garden · Floral Boutique · Envíos a domicilio · Escríbenos y te ayudamos a elegir.</p>
+    <span class="copy-cta">@orquideasgarden</span>
+  </div>
+
+  <div class="copy-card">
+    <p class="copy-platform">WhatsApp Business · Mensaje de bienvenida</p>
+    <p class="copy-text">¡Hola! 🌸 Bienvenida a Orquídeas Garden, tu Floral Boutique en Bogotá. Somos especialistas en orquídeas con variedad y belleza en cada arreglo.<br><br>¿En qué podemos ayudarte hoy? Puedes pedirnos el catálogo o contarnos para qué ocasión es tu arreglo y te asesoramos con mucho gusto.</p>
+    <span class="copy-cta">Envía para ver catálogo →</span>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 06 · KEYWORDS -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">06</span>
+    <div class="sec-title-group">
+      <span class="sec-label">SEO / SEM</span>
+      <span class="sec-title">Palabras clave</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.75;">Keywords priorizadas para campañas de búsqueda en Google y optimización orgánica.</p>
+  <div class="kw-wrap">
+    <span class="kw kw-mauve">orquídeas Bogotá</span>
+    <span class="kw kw-lav">orquídeas a domicilio Bogotá</span>
+    <span class="kw kw-mauve">regalar orquídeas</span>
+    <span class="kw kw-lav">floral boutique Bogotá</span>
+    <span class="kw kw-mauve">arreglos de orquídeas</span>
+    <span class="kw kw-lav">orquídeas phalaenopsis</span>
+    <span class="kw kw-mauve">regalo romántico Bogotá</span>
+    <span class="kw kw-lav">flores exóticas Colombia</span>
+    <span class="kw kw-mauve">vivero orquídeas Bogotá</span>
+    <span class="kw kw-lav">plantas ornamentales regalo</span>
+    <span class="kw kw-mauve">orquídeas cumpleaños</span>
+    <span class="kw kw-lav">sorpresa floral Bogotá</span>
+    <span class="kw kw-mauve">decoración con orquídeas</span>
+    <span class="kw kw-lav">orquídeas domicilio Colombia</span>
+  </div>
+</div>
+
+<hr class="gradient-strip">
+
+<!-- 07 · CTA BLOCKS -->
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-num">07</span>
+    <div class="sec-title-group">
+      <span class="sec-label">Elementos digitales</span>
+      <span class="sec-title">Bloques CTA</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.75;">Variantes del bloque de llamado a la acción para usar en la landing page y piezas de campaña.</p>
+
+  <div class="cta-block cta-lav">
+    <div>
+      <p class="cta-txt">¿Lista para ordenar tu orquídea?</p>
+      <p class="cta-sub">Especialistas · Floral Boutique · Bogotá, Colombia</p>
+    </div>
+    <button class="cta-btn cta-btn-lav">Escribir por WhatsApp</button>
+  </div>
+
+  <div class="cta-block cta-mauve">
+    <div>
+      <p class="cta-txt">¿Lista para ordenar tu orquídea?</p>
+      <p class="cta-sub">Especialistas · Floral Boutique · Bogotá, Colombia</p>
+    </div>
+    <button class="cta-btn cta-btn-mauve">Escribir por WhatsApp</button>
+  </div>
+
+  <div class="cta-block" style="background:var(--lav-950);border-color:rgba(255,255,255,.06);margin-top:10px;">
+    <div>
+      <p style="font-size:15px;font-weight:400;color:#d4c4f0;">¿Lista para ordenar tu orquídea?</p>
+      <p style="font-size:11px;margin-top:2px;color:var(--lav-400);">Especialistas · Floral Boutique · Bogotá, Colombia</p>
+    </div>
+    <button class="cta-btn" style="background:var(--lav-600);">Escribir por WhatsApp</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;">
+    <svg width="22" height="38" viewBox="0 0 52 90" fill="none">
+      <path d="M26 8 C26 18 26 40 26 80" stroke="#5a4a94" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="26" cy="22" rx="7" ry="12" fill="none" stroke="#7a6ab4" stroke-width="1" transform="rotate(-18 26 22)"/>
+      <ellipse cx="26" cy="22" rx="7" ry="12" fill="none" stroke="#9880c4" stroke-width="1" transform="rotate(18 26 22)"/>
+      <ellipse cx="26" cy="55" rx="8" ry="13" fill="none" stroke="#7a6ab4" stroke-width="1" transform="rotate(-20 26 55)"/>
+      <ellipse cx="26" cy="55" rx="8" ry="13" fill="none" stroke="#9880c4" stroke-width="1" transform="rotate(20 26 55)"/>
+    </svg>
+    <p class="footer-logo-name">Orquideas Garden</p>
+  </div>
+  <p class="footer-sub">Floral Boutique · Bogotá, Colombia ®</p>
+  <div class="footer-line"></div>
+  <p class="footer-note">Mini Manual de Identidad Visual · 2025 · Uso interno y agencia</p>
+  <p class="footer-note" style="margin-top:4px;">@orquideasgarden · orquideasgardenbog</p>
+</div>
+
+</body>
+</html>
