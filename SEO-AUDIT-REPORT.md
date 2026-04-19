@@ -410,12 +410,8 @@ Citas permitidas con atribución a "Orquideas Garden (orquideasgarden.online)"
 #### 6. ✅ Añadir favicon — COMPLETADO 2026-04-19
 `app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png` añadidos. `app/manifest.ts` creado con datos reales de marca (reemplaza placeholder "MyWebSite").
 
-#### 7. Corregir título duplicado en páginas de producto
-**Archivo:** `lib/catalog.ts` → campo `seo_title` de cada producto  
-O en `app/producto/[slug]/page.tsx`:
-```typescript
-title: `${product.name} | Orquideas Garden`  // Solo UNA vez el nombre de marca
-```
+#### 7. ✅ Corregir título duplicado en páginas de producto — COMPLETADO 2026-04-19
+`app/producto/[slug]/page.tsx`: `title: { absolute: product.seo_title }` — evita que el template del layout añada una segunda vez `| Orquideas Garden`.
 
 ---
 
@@ -426,7 +422,7 @@ title: `${product.name} | Orquideas Garden`  // Solo UNA vez el nombre de marca
 - `lib/catalog.ts` → campos `imagenes[]` y `woo_checkout_url`
 - Mover archivos a `public/productos/` o usar CDN propio
 
-#### 9. Implementar FAQPage schema
+#### 9. ✅ Implementar FAQPage schema — COMPLETADO 2026-04-19
 **Archivo:** `components/ui/faq-section-shadcnui.tsx` o `app/page.tsx`  
 Mover el array de FAQs a `lib/faq-data.ts` y generar JSON-LD:
 ```json
@@ -447,7 +443,7 @@ Mover el array de FAQs a `lib/faq-data.ts` y generar JSON-LD:
 }
 ```
 
-#### 10. Añadir AggregateRating al schema Florist
+#### 10. ✅ Añadir AggregateRating al schema Florist — COMPLETADO 2026-04-19
 **Archivo:** `app/layout.tsx`
 ```json
 "aggregateRating": {
@@ -459,13 +455,13 @@ Mover el array de FAQs a `lib/faq-data.ts` y generar JSON-LD:
 }
 ```
 
-#### 11. Añadir GeoCoordinates y hasMap al schema
+#### 11. ✅ Añadir GeoCoordinates y hasMap al schema — COMPLETADO 2026-04-19
 ```json
 "geo": { "@type": "GeoCoordinates", "latitude": 4.67890, "longitude": -74.05220 },
 "hasMap": "https://maps.google.com/?q=Calle+97+%2370c-95+Bogotá"
 ```
 
-#### 12. Añadir WebSite schema
+#### 12. ✅ Añadir WebSite schema — COMPLETADO 2026-04-19
 ```json
 {
   "@context": "https://schema.org",
@@ -477,8 +473,8 @@ Mover el array de FAQs a `lib/faq-data.ts` y generar JSON-LD:
 }
 ```
 
-#### 13. Corregir encoding OG title en /colecciones
-El em dash "–" aparece como "â€"" — verificar charset del generador de metadata en `app/colecciones/page.tsx`.
+#### 13. ✅ Corregir encoding OG title en /colecciones — COMPLETADO 2026-04-19
+`app/colecciones/page.tsx`: em dash reemplazado por escape Unicode `\u2013` para evitar problemas de encoding.
 
 #### 14. Expandir FAQ answers a 80-140 palabras
 Cada respuesta actual (~28 palabras) está por debajo del umbral de citabilidad para AI Overviews.

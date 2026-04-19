@@ -33,36 +33,43 @@
 - **`TrustStats`**: fix SSR — crawlers ahora ven "+2.500 orquídeas entregadas" y "2016" en lugar de "0".
 - **Favicon**: `app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png` añadidos; `app/manifest.ts` creado con datos de marca reales.
 
+### 2.7 Correcciones SEO sprint 2 — 2026-04-19 ✅
+- **Título producto**: `{ absolute }` en `generateMetadata` — elimina doble `| Orquideas Garden`.
+- **OG title `/colecciones`**: encoding corregido (`â€"` → `–` real via `\u2013`).
+- **Florist schema** (`app/layout.tsx`): añadidos `@id`, `geo` (4.6789, -74.0522), `hasMap`, `aggregateRating` (5/5 · 4 reseñas).
+- **FAQPage schema**: JSON-LD con 6 preguntas emitido desde `app/page.tsx`.
+- **WebSite schema**: JSON-LD con `@id` y `publisher` link al Florist en `app/page.tsx`.
+
 ## 3) Estado funcional clave
 - Hero activo en Home con carrusel e imágenes locales.
 - Navegación principal estable (Inicio, Colecciones, Cotización, Sobre Nosotros, Contacto).
 - Formulario de cotización vía WhatsApp activo en `/cotizacion`.
 - Enlaces de compra hacia WooCommerce desde tarjetas y detalle de producto.
 
-## 4) Score SEO actual (post sprint 1)
-| Categoría | Score anterior | Score estimado actual |
-|-----------|---------------|----------------------|
-| Technical SEO | 28/100 | ~46/100 |
-| Content & E-E-A-T | 61/100 | 61/100 |
-| On-Page SEO | 58/100 | 58/100 |
-| Schema / Structured Data | 52/100 | ~52/100 |
-| Performance (CWV) | 72/100 | 72/100 |
-| AI Search Readiness (GEO) | 47/100 | ~57/100 |
-| Images | 78/100 | 78/100 |
-| **TOTAL** | **51/100** | **~58/100** |
+## 4) Score SEO actual (post sprint 1 + 2)
+| Categoría | Score inicial | Post sprint 1 | Post sprint 2 |
+|-----------|--------------|--------------|--------------|
+| Technical SEO | 28/100 | ~46/100 | ~48/100 |
+| Content & E-E-A-T | 61/100 | 61/100 | 61/100 |
+| On-Page SEO | 58/100 | 58/100 | ~63/100 |
+| Schema / Structured Data | 52/100 | ~52/100 | ~68/100 |
+| Performance (CWV) | 72/100 | 72/100 | 72/100 |
+| AI Search Readiness (GEO) | 47/100 | ~57/100 | ~62/100 |
+| Images | 78/100 | 78/100 | 78/100 |
+| **TOTAL** | **51/100** | **~58/100** | **~64/100** |
 
-> Ganancia real confirmada cuando Vercel re-indexe canonicals y sitemap (~48-72 hrs).
+> Ganancia real confirmada cuando Google re-indexe tras crawl (~48-72 hrs post-deploy).
 
 ## 5) Pendientes priorizados (por ROI)
 
 ### ALTO — Esta semana
-- [ ] Corregir título duplicado en páginas de producto (`"| Orquideas Garden | Orquideas Garden"`)
+- [x] Corregir título duplicado en páginas de producto — ✅ sprint 2
+- [x] Implementar **FAQPage schema** JSON-LD en homepage — ✅ sprint 2
+- [x] Añadir **AggregateRating** al schema Florist — ✅ sprint 2
+- [x] Añadir **GeoCoordinates** y `hasMap` al schema Florist — ✅ sprint 2
+- [x] Añadir **WebSite schema** en homepage — ✅ sprint 2
+- [x] Corregir encoding OG title `/colecciones` — ✅ sprint 2
 - [ ] Migrar imágenes de producto de `orquideasgarden.store/wp-content/` al hosting propio
-- [ ] Implementar **FAQPage schema** JSON-LD en homepage
-- [ ] Añadir **AggregateRating** al schema Florist en `app/layout.tsx`
-- [ ] Añadir **GeoCoordinates** y `hasMap` al schema Florist
-- [ ] Añadir **WebSite schema** con SearchAction en homepage
-- [ ] Corregir encoding roto en OG title de `/colecciones` (`â€"` → `–`)
 
 ### MEDIO — Próximo mes
 - [ ] Reescribir `/sobre-nosotros` (actualmente ~95 palabras — objetivo 500-800)
