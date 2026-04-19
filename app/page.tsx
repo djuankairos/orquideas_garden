@@ -6,7 +6,40 @@ import { FAQSection } from "@/components/ui/faq-section-shadcnui";
 import { ReviewsGrid } from "@/components/ui/reviews-grid";
 import { TrustStats } from "@/components/ui/trust-stats";
 import { collections, products } from "@/lib/catalog";
-import { SITE_URL } from "@/lib/site";
+import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
+
+const faqSchemaData = [
+  {
+    question: "¿Cómo puedo hacer un pedido en Orquídeas Garden?",
+    answer:
+      "Puedes elegir tu arreglo desde el catálogo y continuar por el enlace de compra. Si prefieres asesoría personalizada, también puedes escribirnos por WhatsApp.",
+  },
+  {
+    question: "¿Tienen entregas el mismo día en Bogotá?",
+    answer:
+      "Sí, contamos con entregas el mismo día según disponibilidad de producto y zona. Te recomendamos realizar tu pedido con la mayor anticipación posible.",
+  },
+  {
+    question: "¿Puedo incluir una tarjeta con mensaje personalizado?",
+    answer:
+      "Claro. Puedes agregar tu mensaje al momento de comprar y lo enviamos con una presentación cuidada para la ocasión.",
+  },
+  {
+    question: "¿Qué medios de pago manejan?",
+    answer:
+      "Trabajamos con Bold, así que recibimos todos los medios de pago, siempre seguros y disponibles en el proceso de compra. Si necesitas apoyo, te guiamos paso a paso por WhatsApp.",
+  },
+  {
+    question: "¿Manejan arreglos para condolencias y eventos especiales?",
+    answer:
+      "Sí, diseñamos opciones para condolencias, cumpleaños, aniversarios y detalles corporativos, manteniendo un estilo elegante y sobrio cuando se requiere.",
+  },
+  {
+    question: "¿Cómo cuido la orquídea después de recibirla?",
+    answer:
+      "Entregamos recomendaciones básicas de cuidado para conservarla por más tiempo: luz indirecta, riego moderado y buena ventilación.",
+  },
+];
 
 const heroImages = [
   { src: "/hero/accordion/mg-0567.jpg", alt: "Arreglos de regalo - Orquideas Garden" },
@@ -103,6 +136,38 @@ export default function HomePage() {
       <section className="pt-10">
         <FAQSection />
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            name: SITE_NAME,
+            url: SITE_URL,
+            inLanguage: "es-CO",
+            publisher: { "@id": `${SITE_URL}/#florist` },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqSchemaData.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
     </main>
   );
 }

@@ -29,7 +29,7 @@ export async function generateMetadata({
   if (!product) return {};
 
   return {
-    title: product.seo_title,
+    title: { absolute: product.seo_title },
     description: product.seo_description,
     alternates: {
       canonical: absoluteUrl(`/producto/${product.slug}`),

@@ -73,6 +73,7 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Florist",
+    "@id": `${SITE_URL}/#florist`,
     name: SITE_NAME,
     slogan: "Floral Boutique · Bogotá",
     url: SITE_URL,
@@ -96,6 +97,19 @@ export default function RootLayout({
       addressRegion: "Bogotá",
       addressCountry: "CO",
       postalCode: "110911",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 4.6789,
+      longitude: -74.0522,
+    },
+    hasMap: "https://maps.google.com/?q=Calle+97+%2370c-95+Bogot%C3%A1",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "4",
+      bestRating: "5",
+      worstRating: "1",
     },
     openingHoursSpecification: [
       {
