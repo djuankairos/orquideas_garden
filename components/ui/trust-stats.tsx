@@ -41,17 +41,12 @@ export function TrustStats() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const inView = useInView(sectionRef, { once: true, amount: 0.35 });
   const prefersReducedMotion = useReducedMotion();
-  const [counts, setCounts] = useState<Record<string, number>>(() =>
-    Object.fromEntries(stats.map((item) => [item.id, 0])),
-  );
+  const [animatedCounts, setAnimatedCounts] = useState<Record<string, number> | null>(null);
 
   useEffect(() => {
     if (!inView) return;
 
-    if (prefersReducedMotion) {
-      setCounts(Object.fromEntries(stats.map((item) => [item.id, item.value])));
-      return;
-    }
+    if (prefersReducedMotion) return;
 
     const duration = 2400;
     const start = performance.now();
@@ -60,7 +55,7 @@ export function TrustStats() {
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
 
-      setCounts(
+      setAnimatedCounts(
         Object.fromEntries(
           stats.map((item) => [item.id, Math.round(item.value * progress)]),
         ),
@@ -109,7 +104,7 @@ export function TrustStats() {
             <p className="text-xs uppercase tracking-[0.16em] text-[#9a7a8a]">{item.label}</p>
             <p className="mt-3 font-display text-5xl leading-none text-[#2a1a44] drop-shadow-[0_1px_0_rgba(255,255,255,0.65)] sm:text-6xl">
               {item.prefix}
-              {formatValue(counts[item.id] ?? 0)}
+              {formatValue(animatedCounts?.[item.id] ?? item.value)}
               {item.suffix}
             </p>
           </motion.article>
