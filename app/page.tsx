@@ -2,6 +2,9 @@
 import { CollectionCard } from "@/components/collection-card";
 import { ProductCard } from "@/components/product-card";
 import { HeroSection } from "@/components/ui/feature-carousel";
+import { FAQSection } from "@/components/ui/faq-section-shadcnui";
+import { ReviewsGrid } from "@/components/ui/reviews-grid";
+import { TrustStats } from "@/components/ui/trust-stats";
 import { collections, products } from "@/lib/catalog";
 import { SITE_URL } from "@/lib/site";
 
@@ -87,6 +90,18 @@ export default function HomePage() {
             <ProductCard key={product.slug} product={product} pageType="home" />
           ))}
         </div>
+      </section>
+
+      <section className="pt-10">
+        <TrustStats />
+      </section>
+
+      <section className="pt-10">
+        <ReviewsGrid />
+      </section>
+
+      <section className="pt-10">
+        <FAQSection />
       </section>
     </main>
   );
