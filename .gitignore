@@ -20,3 +20,6 @@ Resultado_Auditoria_web.html
 
 # Fuentes de assets sin procesar
 assets/favicon/
+
+# Carpeta de trabajo local de landings (imágenes originales y HTML standalone)
+Landing/
